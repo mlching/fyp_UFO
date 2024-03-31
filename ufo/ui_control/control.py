@@ -1,12 +1,9 @@
-# Copyright (c) Microsoft Corporation.
-# Licensed under the MIT License.
-
 import ast
 import time
 import warnings
 from typing import List
 import pyautogui
-
+from interpreter import interpreter
 from pywinauto import Desktop
 
 from ..config.config import load_config
@@ -148,12 +145,12 @@ def replace_newline(input_str):
     :return: The replaced string.
     """
     # Replace \n with \\n
-    result_str = input_str.replace('\n', '\\n')
+    result_str = input_str.replace('\n', '')
 
     # Check if there are already \\n in the string
     if '\\\\n' in result_str:
         # If found, revert \\n to \n
-        result_str = result_str.replace('\\\\n', '\\n')
+        result_str = result_str.replace('\\\\n', '')
 
     return result_str
 
@@ -194,7 +191,10 @@ def execution(window, method_name:str, args:dict):
         for _ in range(k):
             pyautogui.press("backspace")
     elif method_name == "press":
-        pyautogui.press(args["key"])    
+        pyautogui.press(args["key"])
+    elif method_name == "interpreter.chat":
+        task = args["task"]    
+        interpreter.chat(task)
     else:
         try:
             print("window:", window, "method_name", method_name)
