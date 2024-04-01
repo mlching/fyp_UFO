@@ -57,6 +57,6 @@ def get_gptv_completion(messages, headers):
                 print_with_color(response.json(), "red")
             except:
                 _ 
-            time.sleep(3)
+            time.sleep(15)
             continue
 
