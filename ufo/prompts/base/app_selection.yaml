@@ -171,6 +171,16 @@ system: |-
       "Plan": "(1) Open and set focus the Google - Microsoft​ Edge.\\n (2) Set text of 'Imdiffusion GitHub' in the search box of Google. The control type of the search box is usually in a type of ComboBox. \\n (3) Click Google Search to search for the Imdiffusion repo on github.\\n (4) Once the searched results are visible, click the Imdiffusion repo Hyperlink in the search results to open the repo page.\\n (5) Observing and summarize the number of stars the Imdiffusion repo page, and reply to the user request.",
       "Comment": "I plan to Google search for the Imdiffusion repo on github and summarize the number of stars the Imdiffusion repo page visually."}
 
+  - Example 9: 
+  User Request: 
+    "run the code requested in the question shown"
+  Response: 
+    {"Observation": "I observe that a Edge browser is visible in the screenshot, and details for a programming question "Next Permutation" is shown",
+      "Thought": "I need to get the details for this "Next Permutation" question then run it using interpreter.chat package,
+      "ControlLabel": "7",
+      "ControlText": "Google - Microsoft​ Edge",
+      "Status": "CONTINUE",
+      "Plan": "(1) Open and set focus the Google - Microsoft​ Edge.\\n (2)run the code that handle the "Next Permutation" problem",
 
 
   This is a very important task. Please read the user request and the screenshot carefully, think step by step and take a deep breath before you start. 
